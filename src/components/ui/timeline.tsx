@@ -1,9 +1,5 @@
 "use client";
-import {
-  useScroll,
-  useTransform,
-  motion,
-} from "framer-motion";
+import { useScroll, useTransform, motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 
 interface TimelineEntry {
@@ -33,28 +29,35 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   return (
     <div className="w-full font-sans md:px-10" ref={containerRef}>
-      <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10 flex flex-col items-center md:items-start gap-8">
-        <h2 className="text-6xl font-bold md:text-8xl mb-4 text-black dark:text-white max-w-4xl select-none drop-shadow-lg">
+      <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10 grid grid-cols-1 md:grid-cols-2 grid-rows-4 auto-rows-min gap-6">
+        <h2 className="text-6xl md:text-8xl text-center md:text-left font-bold text-slate-950 dark:text-white drop-shadow-lg select-none">
           船長の決断
         </h2>
-        <p className="text-slate-700 dark:text-slate-300 text-sm md:text-base max-w-sm md:max-w-lg text-justify">
-          あなたは旅客船「サンシャイン号」の船長です。
-          <br />
-          大阪南港を出発し、土佐湾を過ぎ、まもなく日が暮れようとしています。
-          海は波がなく、穏やかに航海しています。
-          ところが濃霧が発生し、どんどん視界が悪化してきました。
-          レーダーに船の影が映ったとき…
-          すでに回避する適切な時機を逸し、衝突をしてしまいました。
-          <br />
-          あなたは、直ちに船長として適切な処置をとる必要があります。
-          <br />
-          船長として素早く決断して下さい。
-        </p>
-        <div className="flex flex-col md:flex-row items-center text-slate-700 dark:text-slate-300 md:text-lg max-w-sm md:max-w-lg text-justify md:gap-4 gap-2">
-          <h3>リュウ チャーウェイ</h3>
-          <h3>リー ホイトウ</h3>
-          <h3>郁靖ウェン</h3>
-          <h3>藍方</h3>
+        <div className=" row-span-4 w-full h-full flex justify-center items-center">
+          <div className="bg-slate-50 w-[297px] h-[420] rounded-3xl shadow-xl dark:shadow-none flex justify-center items-center text-[240px] select-none">
+            👨‍✈️
+          </div>
+        </div>
+        <div className="row-span-3 flex flex-col items-center justify-center gap-4">
+          <p className="text-slate-700 dark:text-slate-300 text-sm md:text-base max-w-sm md:max-w-lg text-justify">
+            あなたは旅客船「サンシャイン号」の船長です。
+            <br />
+            大阪南港を出発し、土佐湾を過ぎ、まもなく日が暮れようとしています。
+            海は波がなく、穏やかに航海しています。
+            ところが濃霧が発生し、どんどん視界が悪化してきました。
+            レーダーに船の影が映ったとき…
+            すでに回避する適切な時機を逸し、衝突をしてしまいました。
+            <br />
+            あなたは、直ちに船長として適切な処置をとる必要があります。
+            <br />
+            船長として素早く決断して下さい。
+          </p>
+          <div className="flex flex-col md:flex-row justify-between items-center text-slate-800 dark:text-slate-100 md:text-lg text-justify md:gap-4 gap-2">
+            <h3>リュウ チャーウェイ</h3>
+            <h3>リー ホイトウ</h3>
+            <h3>郁靖ウェン</h3>
+            <h3>藍方</h3>
+          </div>
         </div>
       </div>
 
