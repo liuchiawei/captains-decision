@@ -28,9 +28,9 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
   return (
-    <div className="w-full font-sans md:px-10" ref={containerRef}>
+    <div className="w-full font-sans md:px-10 relative z-10" ref={containerRef}>
       <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10 grid grid-cols-1 md:grid-cols-2 grid-rows-4 auto-rows-min gap-6">
-        <h2 className="text-6xl md:text-8xl text-center md:text-left font-bold text-slate-950 dark:text-white drop-shadow-lg select-none">
+        <h2 className="text-6xl md:text-8xl text-center md:text-left font-bold text-white drop-shadow-lg select-none">
           船長の決断
         </h2>
         <div className=" row-span-4 w-full h-full flex justify-center items-center">
@@ -38,8 +38,8 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             👨‍✈️
           </div>
         </div>
-        <div className="row-span-3 flex flex-col items-center justify-center gap-4">
-          <p className="text-slate-700 dark:text-slate-300 text-sm md:text-base max-w-sm md:max-w-lg text-justify">
+        <div className="row-span-3 flex flex-col items-center justify-center gap-4 bg-slate-200/50 rounded-3xl p-8">
+          <p className="text-slate-700 dark:text-slate-200 text-sm md:text-base max-w-sm md:max-w-lg text-justify">
             あなたは旅客船「サンシャイン号」の船長です。
             <br />
             大阪南港を出発し、土佐湾を過ぎ、まもなく日が暮れようとしています。
@@ -52,12 +52,12 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             <br />
             船長として素早く決断して下さい。
           </p>
-          <div className="flex flex-col md:flex-row justify-between items-center text-slate-800 dark:text-slate-100 md:text-lg text-justify md:gap-4 gap-2">
-            <h3>リュウ チャーウェイ</h3>
-            <h3>リー ホイトウ</h3>
-            <h3>郁靖ウェン</h3>
-            <h3>藍方</h3>
-          </div>
+          <ul className="flex flex-col md:flex-row justify-end items-center text-slate-700 dark:text-slate-100 gap-2 md:gap-4">
+            <li>リュウ チャーウェイ</li>
+            <li>リー ホイトウ</li>
+            <li>郁靖ウェン</li>
+            <li>藍方</li>
+          </ul>
         </div>
       </div>
 

@@ -36,7 +36,10 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Nav />
-          <main className="bg-slate-100 dark:bg-slate-950">{children}</main>
+          <main className="bg-slate-100 dark:bg-slate-950 relative z-10">
+          <div className="polygon" />
+            {children}
+          </main>
           <footer className="bg-gradient-to-b from-slate-400 to-slate-500 py-8">
             <p className="text-center text-md text-slate-100 dark:text-slate-300">© 2025 HAL東京 船長の決断</p>
           </footer>
