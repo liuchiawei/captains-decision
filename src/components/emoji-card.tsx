@@ -66,7 +66,7 @@ const container: React.CSSProperties = {
 };
 
 const cardContainer: React.CSSProperties = {
-  overflow: "hidden",
+  overflowY: "hidden",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
