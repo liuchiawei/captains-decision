@@ -18,7 +18,7 @@ const notoSansJp = Noto_Sans_JP({
 
 export const metadata: Metadata = {
   title: "船長の決断",
-  description: "船長の決断",
+  description: "PW11Aの決断",
 };
 
 export default function RootLayout({
