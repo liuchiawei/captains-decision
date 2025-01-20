@@ -134,11 +134,11 @@ const card: React.CSSProperties = {
 
 const bgCircle: React.CSSProperties = {
   position: "absolute",
-  left: "-10%",
-  bottom: "-10%",
-  width: 360,
-  height: 360,
-  borderRadius: 360,
+  left: "-20%",
+  top: "10%",
+  width: 300,
+  height: 300,
+  borderRadius: 300,
   opacity: 0.2,
   zIndex: -1,
 };

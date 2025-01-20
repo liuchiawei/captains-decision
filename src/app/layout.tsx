@@ -36,7 +36,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Nav />
-          <main className="bg-slate-100 dark:bg-slate-950 relative z-10">
+          <main className="bg-slate-100 dark:bg-slate-950 relative z-10 overflow-x-hidden">
           <div className="polygon" />
             {children}
           </main>
