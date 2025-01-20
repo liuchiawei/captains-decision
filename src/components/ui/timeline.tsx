@@ -34,7 +34,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           船長の決断
         </h2>
         <div className=" row-span-4 w-full h-full flex justify-center items-center">
-          <div className="bg-slate-50 w-[297px] h-[420] rounded-3xl shadow-xl dark:shadow-none flex justify-center items-center text-[240px] select-none">
+          <div className="bg-slate-50 w-[210px] h-[420px] rounded-3xl shadow-xl dark:shadow-none flex justify-center items-center text-[240px] select-none">
             👨‍✈️
           </div>
         </div>
