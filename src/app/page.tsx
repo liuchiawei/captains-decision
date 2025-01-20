@@ -11,7 +11,7 @@ export default function Main() {
           </p>
           <div className="flex flex-col items-center">
             <div className="flex flex-col items-center justify-center w-full">
-              <EmojiCard emoji="🔍" hueA={340} hueB={10} index="F" />
+              <EmojiCard emoji="🧐" hueA={340} hueB={10} index="F" />
               <h1 className="text-3xl font-bold">状況把握</h1>
             </div>
             <div className="flex flex-col items-center justify-center w-full">
