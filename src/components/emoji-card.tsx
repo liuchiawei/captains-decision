@@ -1,10 +1,16 @@
 import * as motion from "motion/react-client";
 import type { Variants } from "motion/react";
 
-export default function EmojiCard( data: CardProps) {
+export default function EmojiCard(data: CardProps) {
   return (
     <div style={container}>
-        <Card emoji={data.emoji} hueA={data.hueA} hueB={data.hueB} key={data.emoji} index={data.index} />
+      <Card
+        emoji={data.emoji}
+        hueA={data.hueA}
+        hueB={data.hueB}
+        key={data.emoji}
+        index={data.index}
+      />
     </div>
   );
 }
@@ -20,20 +26,30 @@ function Card({ emoji, hueA, hueB, index }: CardProps) {
   const background = `linear-gradient(306deg, ${hue(hueA)}, ${hue(hueB)})`;
 
   return (
-    <motion.div
-      style={cardContainer}
-      initial="offscreen"
-      whileInView="onscreen"
-      viewport={{ amount: 0.8 }}
-    >
-      <div style={{ ...splash, background }} />
-      <motion.div style={card} variants={cardVariants} className="card">
-        <div className="relative z-10 drop-shadow-md">
-          {emoji}
-        </div>
-        <h1 className="text-[260px] text-slate-200 font-bold absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 select-none">{index}</h1>
+    <>
+      <motion.div
+        style={cardContainer}
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ amount: 0.8 }}
+      >
+        <div style={{ ...splash, background }} />
+        <motion.div style={card} variants={cardVariants} className="card">
+          <div className="relative z-10 drop-shadow-md">{emoji}</div>
+          <h1 className="text-[260px] text-slate-200 font-bold absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 select-none">
+            {index}
+          </h1>
+        </motion.div>
       </motion.div>
-    </motion.div>
+      <motion.div
+        style={{ ...bgCircle, background }}
+        variants={backgroundVariants}
+        className="bg-circle"
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ amount: 0.8 }}
+      ></motion.div>
+    </>
   );
 }
 
@@ -52,6 +68,20 @@ const cardVariants: Variants = {
   },
 };
 
+const backgroundVariants: Variants = {
+  offscreen: {
+    scale: 0,
+  },
+  onscreen: {
+    scale: 1,
+    transition: {
+      type: "spring",
+      stiffness: 50,
+      duration: 0.3,
+    },
+  },
+};
+
 const hue = (h: number) => `hsl(${h}, 100%, 50%)`;
 
 /**
@@ -63,6 +93,7 @@ const container: React.CSSProperties = {
   maxWidth: 500,
   paddingBottom: 50,
   width: "100%",
+  position: "relative",
 };
 
 const cardContainer: React.CSSProperties = {
@@ -101,3 +132,13 @@ const card: React.CSSProperties = {
   position: "absolute",
 };
 
+const bgCircle: React.CSSProperties = {
+  position: "absolute",
+  left: "-10%",
+  bottom: "-10%",
+  width: 360,
+  height: 360,
+  borderRadius: 360,
+  opacity: 0.2,
+  zIndex: -1,
+};
