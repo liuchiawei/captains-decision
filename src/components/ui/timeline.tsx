@@ -38,7 +38,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             👨‍✈️
           </div>
         </div>
-        <div className="row-span-3 flex flex-col items-center justify-center gap-4 bg-slate-200/50 rounded-3xl p-8">
+        <div className="row-span-3 flex flex-col items-center justify-center gap-4 bg-slate-100/50 dark:bg-slate-500/20 rounded-3xl p-8">
           <p className="text-slate-700 dark:text-slate-200 text-sm md:text-base max-w-sm md:max-w-lg text-justify">
             あなたは旅客船「サンシャイン号」の船長です。
             <br />
