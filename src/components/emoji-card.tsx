@@ -71,8 +71,8 @@ const cardContainer: React.CSSProperties = {
   justifyContent: "center",
   alignItems: "center",
   position: "relative",
-  paddingTop: 20,
   marginBottom: -120,
+  height: 450,
 };
 
 const splash: React.CSSProperties = {
@@ -85,9 +85,9 @@ const splash: React.CSSProperties = {
 };
 
 const card: React.CSSProperties = {
-  fontSize: 164,
-  width: 300,
-  height: 430,
+  fontSize: 144,
+  width: 240,
+  height: 320,
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
@@ -97,6 +97,6 @@ const card: React.CSSProperties = {
     "0 0 2px hsl(0deg 0% 0% / 0.075), 0 0 4px hsl(0deg 0% 0% / 0.075), 0 0 10px hsl(0deg 0% 0% / 0.075), 0 0 18px hsl(0deg 0% 0% / 0.075)",
   transformOrigin: "10% 60%",
   userSelect: "none",
-  position: "relative",
+  position: "absolute",
 };
 
