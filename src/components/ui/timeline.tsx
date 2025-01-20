@@ -33,11 +33,11 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   return (
     <div className="w-full font-sans md:px-10" ref={containerRef}>
-      <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10 flex flex-col items-center md:items-start gap-6">
+      <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10 flex flex-col items-center md:items-start gap-8">
         <h2 className="text-6xl font-bold md:text-8xl mb-4 text-black dark:text-white max-w-4xl select-none drop-shadow-lg">
           船長の決断
         </h2>
-        <p className="text-slate-700 dark:text-slate-300 text-sm md:text-base max-w-sm md:max-w- text-justify">
+        <p className="text-slate-700 dark:text-slate-300 text-sm md:text-base max-w-sm md:max-w-lg text-justify">
           あなたは旅客船「サンシャイン号」の船長です。
           <br />
           大阪南港を出発し、土佐湾を過ぎ、まもなく日が暮れようとしています。
@@ -50,6 +50,12 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           <br />
           船長として素早く決断して下さい。
         </p>
+        <div className="flex flex-col md:flex-row items-center text-slate-700 dark:text-slate-300 md:text-lg max-w-sm md:max-w-lg text-justify md:gap-4 gap-2">
+          <h3>リュウ チャーウェイ</h3>
+          <h3>リー ホイトング</h3>
+          <h3>郁靖ウェン</h3>
+          <h3>藍方</h3>
+        </div>
       </div>
 
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
