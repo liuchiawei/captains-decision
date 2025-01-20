@@ -1,101 +1,108 @@
-import Image from "next/image";
-
-export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+import { Timeline } from "@/components/ui/timeline";
+import EmojiCard from "@/components/emoji-card";
+export default function Main() {
+  const data = [
+    {
+      title: "状況把握",
+      content: (
+        <div>
+          <p className="text-neutral-800 dark:text-neutral-200 text-lg md:text-xl font-normal mb-8">
+            まず状況を把握することが大切です。危機の状況を把握します。
+          </p>
+          <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center justify-center w-full">
+              <EmojiCard emoji="🔍" hueA={340} hueB={10} index="F" />
+              <h1 className="text-3xl font-bold">状況把握</h1>
+            </div>
+            <div className="flex flex-col items-center justify-center w-full">
+              <EmojiCard emoji="🪫" hueA={340} hueB={10} index="C" />
+              <h1 className="text-3xl font-bold">発電機</h1>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+      ),
+    },
+    {
+      title: "非常通知",
+      content: (
+        <div>
+          <p className="text-neutral-800 dark:text-neutral-200 text-lg md:text-xl font-normal mb-8">
+            危機の状況を把握した次に、部下に通知して召集し、指示を出すとともに、外部(会社、消防、海上保安庁など)へも事態の状況を通報する。
+          </p>
+          <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center justify-center w-full">
+              <EmojiCard emoji="📢" hueA={20} hueB={40} index="G" />
+              <h1 className="text-3xl font-bold">非常通知</h1>
+            </div>
+            <EmojiCard emoji="☎️" hueA={20} hueB={40} index="J" />
+            <h1 className="text-3xl font-bold">SOS</h1>
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "応急処置",
+      content: (
+        <div>
+          <p className="text-neutral-800 dark:text-neutral-200 text-lg md:text-xl font-normal mb-4">
+            被害が拡大しないように、医薬品や水密戸などの応急処置を行います。
+          </p>
+
+          <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center justify-center w-full">
+              <EmojiCard emoji="🔧" hueA={60} hueB={90} index="H" />
+              <h1 className="text-3xl font-bold">水密戸</h1>
+            </div>
+            <div className="flex flex-col items-center justify-center w-full">
+              <EmojiCard emoji="💊" hueA={60} hueB={90} index="E" />
+              <h1 className="text-3xl font-bold">医薬品</h1>
+            </div>
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "避難準備",
+      content: (
+        <div>
+          <p className="text-neutral-800 dark:text-neutral-200 text-lg md:text-xl font-normal mb-4">
+            救命艇で避難準備を行います。
+          </p>
+
+          <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center justify-center w-full">
+              <EmojiCard emoji="🦺" hueA={80} hueB={120} index="I" />
+              <h1 className="text-3xl font-bold">相手救助</h1>
+            </div>
+            <div className="flex flex-col items-center justify-center w-full">
+              <EmojiCard emoji="🪝" hueA={80} hueB={120} index="D" />
+              <h1 className="text-3xl font-bold">つり道具</h1>
+            </div>
+            <div className="flex flex-col items-center justify-center w-full">
+              <EmojiCard emoji="🚤" hueA={80} hueB={120} index="B" />
+              <h1 className="text-3xl font-bold">救命艇</h1>
+            </div>
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "その他",
+      content: (
+        <div>
+          <p className="text-neutral-800 dark:text-neutral-200 text-lg md:text-xl font-normal mb-4">
+            その他の対応を行います。
+          </p>
+
+          <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center justify-center w-full">
+              <EmojiCard emoji="🎺" hueA={205} hueB={245} index="A" />
+              <h1 className="text-3xl font-bold">音楽</h1>
+            </div>
+          </div>
+        </div>
+      ),
+    },
+  ];
+  return <Timeline data={data} />;
 }
