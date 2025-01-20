@@ -52,7 +52,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
         </p>
         <div className="flex flex-col md:flex-row items-center text-slate-700 dark:text-slate-300 md:text-lg max-w-sm md:max-w-lg text-justify md:gap-4 gap-2">
           <h3>リュウ チャーウェイ</h3>
-          <h3>リー ホイトング</h3>
+          <h3>リー ホイトウ</h3>
           <h3>郁靖ウェン</h3>
           <h3>藍方</h3>
         </div>
